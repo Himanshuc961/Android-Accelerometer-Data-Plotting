@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="C:\Users\Himanshu\AndroidStudioProjects\FirstApp\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="C:\Users\Himanshu\AndroidStudioProjects\FirstApp\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_acbb8324c9b3c938107108bab017a97d588c3d9b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Himanshu\AndroidStudioProjects\FirstApp\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="bb6f5cfccd87f7af9e7e68d7f9fc11bf5c6acb91">
+        <dex dex="C:\Users\Himanshu\AndroidStudioProjects\FirstApp\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_382ba9ddff1e2dc1906f191532ff4c4972559b44\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Himanshu\.android\build-cache\c82385832d6cce1606b3d21a6f88b6a451791e66\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="987adec819c9a98faf215814f41195da48fc724e">
+        <dex dex="C:\Users\Himanshu\AndroidStudioProjects\FirstApp\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_057686744fa8e6a13016426fbbf1c9a103f65925\classes.dex" />
+    </item>
+
+</items>
