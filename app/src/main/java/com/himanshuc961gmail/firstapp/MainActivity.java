@@ -1,6 +1,5 @@
 package com.himanshuc961gmail.firstapp;
 
-import java.util.ArrayList;
 
 import android.app.Activity;
 import android.hardware.Sensor;
@@ -14,14 +13,13 @@ import android.widget.TextView;
 import com.jjoe64.graphview.GraphView ;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
-
-
+import mr.go.sgfilter.SGFilter;
+import mr.go.sgfilter.ZeroEliminator;
 
 public class MainActivity extends Activity implements SensorEventListener{
 
     private TextView xText, yText, zText;
     private Button btnStart, btnStop ;
-
     private Sensor mySensor;
     private SensorManager SM;
 
@@ -30,10 +28,17 @@ public class MainActivity extends Activity implements SensorEventListener{
     private float z = 0;
     private double acc = 0;
     private int count = 0;
-
+    private int localcount = 0;
     private int state = 0;
 
     private LineGraphSeries<DataPoint> series;
+
+    private final int nl = 5;
+    private final int nr = 5;
+    private final int degree = 3;
+    private SGFilter sgFilter;
+
+    private double[] data =new double[200];
 
 
     @Override
@@ -78,6 +83,9 @@ public class MainActivity extends Activity implements SensorEventListener{
         graph.getViewport().setXAxisBoundsManual(true);
         graph.getViewport().setMinX(0);
         graph.getViewport().setMaxX(200);
+
+        sgFilter = new SGFilter(nl, nr);
+        sgFilter.appendPreprocessor(new ZeroEliminator());
     }
 
     @Override
@@ -106,10 +114,30 @@ public class MainActivity extends Activity implements SensorEventListener{
         xText.setText("X: " + x);
         yText.setText("Y: " + y);
         zText.setText("Z: " + z);
+          int i=0;
 
         if (state == 1){
             count++;
-            series.appendData(new DataPoint(count, acc), true, 200);
+
+                if (count > 200) {
+                    for (i = 0; i < 199; i++) {
+                        data[i] = data[i + 1];
+                    }
+                   localcount=200;
+                data[199]=acc;
+            }
+            else{
+                    localcount=count%200;
+                    if(count==200) localcount=200;
+                    data[count-1]=acc;
+                }
+
+
+             if(count>nl+nr) {
+                 double[] smooth = sgFilter.smooth(data, SGFilter.computeSGCoefficients(nl, nr, degree));
+                 series.appendData(new DataPoint(count, smooth[localcount - 1 - nl]), true, 200);
+             }
+
             //graph.addSeries(series);
         }
     }

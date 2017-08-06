@@ -12,6 +12,24 @@
     </item>
     <item
         is-multidex="true"
+        jar="C:\Users\Himanshu\AndroidStudioProjects\FirstApp\app\libs\sgfilter_v1_2r25.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="0505b32bac7faef2a01e60c466a90dfb5af44dce">
+        <dex dex="C:\Users\Himanshu\AndroidStudioProjects\FirstApp\app\build\intermediates\transforms\dex\debug\folders\1000\2\sgfilter_v1_2r25_b2c8ac1b3d400b0dcaa69be4142cc3701e1bfa97\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Himanshu\.gradle\caches\modules-2\files-2.1\org.apache.commons\commons-math\2.2\4877b85d388275f994a5cfc7eceb73a8045d3006\commons-math-2.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="4877b85d388275f994a5cfc7eceb73a8045d3006">
+        <dex dex="C:\Users\Himanshu\AndroidStudioProjects\FirstApp\app\build\intermediates\transforms\dex\debug\folders\1000\10\commons-math-2.2_3c71f02e89776a4ce94e1cfd57ad1113b23167c0\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="C:\Users\Himanshu\AndroidStudioProjects\FirstApp\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
